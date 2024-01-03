@@ -9,15 +9,11 @@ const app = express();
 const port = process.env.PORT || 9000;
 
 // parser
-
-
 app.use(cors({
   origin: ['https://job-task-front-end.vercel.app/', 'https://task-front-end.vercel.app/'],
   methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
   credentials: true, 
 }));
-
-
 
 app.use(express.json());
 
@@ -33,8 +29,8 @@ app.get("/", (_, res) => {
 
 app.use("/api/v1", globalRouter);
 
-app.use(globalError)
+app.use(globalError);
 
-app.listen(process.env.PORT, () => {
-  console.log(`Example app listening on port ${process.env.PORT}`);
+app.listen(port, () => {
+  console.log(`Example app listening on port ${port}`);
 });
