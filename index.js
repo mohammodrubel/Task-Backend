@@ -10,7 +10,7 @@ const port = process.env.PORT || 9000;
 
 // parser
 const corsOptions = {
-  origin: 'http://localhost:5173',
+  origin: 'https://job-task-front-end.vercel.app/',
   optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
 };
 
