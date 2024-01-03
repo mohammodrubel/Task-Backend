@@ -9,12 +9,16 @@ const app = express();
 const port = process.env.PORT || 9000;
 
 // parser
-const corsOptions = {
-  origin: 'https://job-task-front-end.vercel.app/',
-  optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
-};
 
-app.use(cors(corsOptions));
+
+app.use(cors({
+  origin: ['https://job-task-front-end.vercel.app/', 'https://task-front-end.vercel.app/'],
+  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+  credentials: true, 
+}));
+
+
+
 app.use(express.json());
 
 // mongoose connection
